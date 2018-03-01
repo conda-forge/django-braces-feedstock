@@ -1,6 +1,6 @@
 {% set name = "django-braces" %}
-{% set version = "1.11.0" %}
-{% set sha256 = "5898ab2ce4ca7c85b21aedf789b96e90c59dc75d26db6d9a4dc0cff3fc7a7aca" %}
+{% set version = "1.12.0" %}
+{% set sha256 = "7c5b91c75240ccf2eb124fe3b09dd4978e8f4d412b553bb791920bd55839159c" %}
 
 package:
   name: {{ name|lower }}
