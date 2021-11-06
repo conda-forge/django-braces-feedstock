@@ -1,6 +1,6 @@
 {% set name = "django-braces" %}
-{% set version = "1.13.0" %}
-{% set sha256 = "ba68e98b817c6f01d71d10849f359979617b3fe4cefb7f289adefddced092ddc" %}
+{% set version = "1.15.0" %}
+{% set sha256 = "f451d08ffc1078d81209a2e17f2219bce20196928853c82405451b18a46875e0" %}
 
 package:
   name: {{ name|lower }}
@@ -13,8 +13,8 @@ source:
 
 build:
   noarch: python
-  number: 1
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
