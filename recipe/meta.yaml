@@ -1,29 +1,36 @@
 {% set name = "django-braces" %}
-{% set version = "1.13.0" %}
-{% set sha256 = "ba68e98b817c6f01d71d10849f359979617b3fe4cefb7f289adefddced092ddc" %}
+{% set version = "1.15.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/django-braces-{{ version }}.tar.gz
+  sha256: f451d08ffc1078d81209a2e17f2219bce20196928853c82405451b18a46875e0
 
 build:
   noarch: python
-  number: 1
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
   host:
+    - python >=3.8
+    - setuptools >=40.6.6
+    - wheel
     - pip
-    - python
-    - setuptools
   run:
-    - python
-    - django >=1.8
+    - python >=3.8
+    - django >=2.2
+
+test:
+  imports:
+    - braces
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/brack3t/django-braces
@@ -39,4 +46,5 @@ about:
 extra:
   recipe-maintainers:
     - cshaley
+    - rxm7706
     - sannykr
