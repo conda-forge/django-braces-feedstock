@@ -1,13 +1,13 @@
 {% set name = "django-braces" %}
-{% set version = "1.15.0" %}
+{% set version = "1.16.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/django-braces-{{ version }}.tar.gz
-  sha256: f451d08ffc1078d81209a2e17f2219bce20196928853c82405451b18a46875e0
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 1de7c2ba92147fc265ec034880aa5f2a714a5d1f1c1280278ca1fdd6f2a08e03
 
 build:
   noarch: python
